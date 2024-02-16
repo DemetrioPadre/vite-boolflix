@@ -1,25 +1,26 @@
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import { store } from './store';
-import Appmain from './components/Appmain.vue';
+import AppSearch from './components/AppSearch.vue';
+import AppList from './components/AppList.vue';
+
 
 
 export default {
   data() {
-    return {
-      store
-    };
+    return { store };
   },
-  components: { Appmain }
+  components: { AppSearch, AppList },
 
 
 };
 </script>
 
 <template>
-  <Appmain></Appmain>
+  <AppSearch></AppSearch>
+  <AppList></AppList>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 @use './assets/style/general.scss';
 </style>
