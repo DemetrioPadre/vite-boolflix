@@ -1,10 +1,31 @@
 <script>
 import { store } from '../store';
+
+
 export default {
     data() {
         return {
             store,
         };
+    },
+
+
+
+    created() {
+
+    },
+
+
+    methods: {
+        flags(idioma) {
+            if (idioma == 'en') return "https://flagsapi.com/GB/flat/16.png";
+            if (idioma == 'fr') return "https://flagsapi.com/FR/flat/16.png";
+            if (idioma == 'it') return "https://flagsapi.com/IT/flat/16.png";
+            if (idioma == 'de') return "https://flagsapi.com/DE/flat/16.png";
+            if (idioma == 'es') return "https://flagsapi.com/ES/flat/16.png";
+            else return "https://flagsapi.com/JE/shiny/16.png";
+
+        },
     }
 }
 
@@ -17,7 +38,8 @@ export default {
             <ul v-for="movie in store.moviesList">
                 <li>titolo: {{ movie.title }}</li>
                 <li>titolo originale: {{ movie.original_title }}</li>
-                <li> lingua: {{ movie.original_language }}</li>
+                <li> lingua: <span> <img :src="flags(movie.original_language)">{{ movie.original_language }}</span>
+                </li>
                 <li> voto: {{ movie.vote_average / 2 }}</li>
             </ul>
         </div>
@@ -26,7 +48,8 @@ export default {
             <ul v-for="serie in store.tvSeries">
                 <li>titolo: {{ serie.title }}</li>
                 <li>titolo originale: {{ serie.original_title }}</li>
-                <li> lingua: {{ serie.original_language }}</li>
+                <li> lingua: <span> <img :src="flags(serie.original_language)">{{ serie.original_language }}</span>
+                </li>
                 <li> voto: {{ serie.vote_average / 2 }}</li>
             </ul>
         </div>
