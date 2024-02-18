@@ -10,9 +10,9 @@ export default {
             searchGeneral: '',
 
         };
-        components: { AppHeader; }
-    },
 
+    },
+    // components: { AppHeader },
     methods: {
         // pippoSearch() {
         //     axios.get(store.apiUriMovie + this.searchGeneral).then((response) => {
@@ -35,10 +35,10 @@ export default {
 
 };
 </script>
-
+<!-- v-if="store.searchShowFalse" -->
 <template>
     <div class="container mt-3 d-flex">
-        <div class="col-6">
+        <div class=" col-6">
             <input type="text" class="form-control" v-model="searchGeneral" @keyup.enter="plutoSearch()"
                 placeholder="come ti posso aiutare">
             <button class="btn btn-danger" @click="plutoSearch()">DEMETRIOSERIE</button>

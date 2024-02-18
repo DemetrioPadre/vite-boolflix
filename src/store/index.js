@@ -5,4 +5,7 @@ export const store = reactive({
     apiKey: '6b67ac9052f72f32a1135373465f12ea',
     moviesList: [],
     tvSeries: [],
+    searchShowFalse: false,
+    searchShowTrue: true,
+
 });

@@ -14,19 +14,22 @@ export default {
         };
     },
     components: { AppSearch, AppSeries },
+    methods: {
+
+    }
 };
 </script>
 
 <template>
     <div class="container ">
-        <div class="filmLink"><button class="film btn btn-danger"><a href="AppSearch.vue">
+        <div class="filmLink"><button @click="store.searchShowTrue" class="film btn btn-danger"><a href="AppSearch.vue">
                     <p>Lista Film</p>
                 </a></button></div>
         <div>
             <h1>BENVENUTI IN DEMETRIOTV<br>cosa guardiamo oggi</h1>
 
         </div>
-        <div class="tvLink"><button class="serie btn btn-danger"><a href="AppSeries.vue">
+        <div class="tvLink"><button @click="store.searchShowTrue" class="serie btn btn-danger"><a href="AppSeries.vue">
                     <p>Serie v</p>
                 </a></button>
         </div>

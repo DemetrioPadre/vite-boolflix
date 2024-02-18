@@ -44,7 +44,11 @@ export default {
                             <h5 class="card-title"> {{ movie.title }} </h5>
                             <p class="card-text">{{ movie.original_title }}</p>
                             <p><span> <img :src="flags(movie.original_language)">{{ movie.original_language }}</span></p>
-                            <p>voto: {{ Math.ceil(movie.vote_average / 2) }}</p>
+                            <p>voto: <i class="fa-solid fa-star" style="color: #FFD43B;"
+                                    v-for="star in (Math.ceil(movie.vote_average / 2))"></i>
+                                <i class="fa-regular fa-star" style="color: #FFD43B;"
+                                    v-for="star in 5 - (Math.ceil(movie.vote_average / 2))"></i>
+                            </p>
 
                         </div>
                     </div>

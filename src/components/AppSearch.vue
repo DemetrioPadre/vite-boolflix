@@ -11,9 +11,9 @@ export default {
             searchGeneral: '',
 
         };
-        components: { AppHeader; }
-    },
 
+    },
+    // components: { AppHeader },
     methods: {
         pippoSearch() {
             axios.get(store.apiUriMovie + this.searchGeneral).then((response) => {
@@ -36,7 +36,7 @@ export default {
 
 };
 </script>
-
+<!-- v-if="store.searchShow" -->
 <template>
     <div class="container mt-3 d-flex">
         <div class="col-6"><input type="text" class="form-control" v-model="searchGeneral" @keyup.enter="pippoSearch()"
